@@ -88,16 +88,20 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Fonction de défilement en douceur avec ajustement de la hauteur de la barre de navigation
+// Fonction de défilement en douceur avec ajustement dynamique pour différents écrans
 scrollButton.addEventListener('click', (event) => {
     event.preventDefault();
     const targetSection = document.querySelector(scrollButton.getAttribute('data-scroll-target'));
 
     if (targetSection) {
-        const navbarHeight = navbar.offsetHeight; // Hauteur de la barre de navigation
+        // En mode PC, utiliser la hauteur de la navbar, sinon pas de décalage
+        const offset = window.innerWidth > 768 ? navbar.offsetHeight : 0;
+
+        // Défilement vers le haut de la section cible avec un ajustement dynamique
         window.scrollTo({
-            top: targetSection.offsetTop - navbarHeight, // Ajustement pour éviter le chevauchement
+            top: targetSection.offsetTop - offset,
             behavior: 'smooth'
         });
     }
 });
+
