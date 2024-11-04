@@ -4,6 +4,8 @@ const navLinks = document.getElementById('nav-links');
 const navLinkItems = document.querySelectorAll('.nav-links li');
 const navbar = document.querySelector('.navbar');
 const videoContainer = document.querySelector('.video-container'); // Conteneur de la vidéo
+const scrollButton = document.getElementById('scroll-button'); // Bouton de scroll
+
 let menuOpen = false;
 
 // Gestion du scroll pour changer la transparence
@@ -84,4 +86,18 @@ window.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
+});
+
+// Fonction de défilement en douceur avec ajustement de la hauteur de la barre de navigation
+scrollButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const targetSection = document.querySelector(scrollButton.getAttribute('data-scroll-target'));
+
+    if (targetSection) {
+        const navbarHeight = navbar.offsetHeight; // Hauteur de la barre de navigation
+        window.scrollTo({
+            top: targetSection.offsetTop - navbarHeight, // Ajustement pour éviter le chevauchement
+            behavior: 'smooth'
+        });
+    }
 });
