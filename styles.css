@@ -1,0 +1,420 @@
+/* Style de base pour le corps */
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Style de la navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Garder un z-index élevé pour capturer les clics */
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Navbar transparente mais interactive en haut de la page */
+.navbar.transparent {
+    background-color: rgba(0, 0, 0, 0.05); /* Ajoute une très légère transparence pour capturer les clics */
+    pointer-events: auto; /* Toujours cliquable même en haut de la page */
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* Navbar solide après le scroll */
+.navbar.solid {
+    background-color: #1e3547;
+    pointer-events: auto;
+}
+
+/* Liens du menu */
+.nav-links {
+    display: none;
+    list-style: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #1e3547;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links li {
+    padding: 15px 0;
+}
+
+/* Restaurer le style de la police et la taille avec plus de spécificité */
+.nav-links.nav-active a {
+    font-size: 1.5rem !important;  /* Ajuster la taille du texte et forcer l'application */
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: color 0.3s ease;
+    position: relative;
+    text-decoration: none;
+}
+
+
+/* Effet bleu clair lors du survol ou de l'activation de la section */
+.nav-links a:hover,
+.nav-links a.active {
+    color: #52b3e4; /* Bleu clair lors du hover ou si la section est active */
+}
+
+/* Espacement propre entre les sections dans le menu */
+.nav-links li {
+    position: relative;
+    margin: 25px 0;
+    text-align: center;
+}
+
+/* Lignes blanches entre les sections */
+.nav-links li::after {
+    content: "";
+    display: block;
+    width: 100%; /* La ligne prendra toute la largeur du texte */
+    height: 1px;
+    background-color: #ffffff;
+    margin: 10px auto 0; /* Centrer la ligne */
+}
+
+/* Correction : affichage du trait sous la dernière section ("Contact") */
+.nav-links li:last-child::after {
+    display: block;
+}
+
+/* Pas de soulignement direct sur les liens */
+.nav-links a {
+    text-decoration: none;
+}
+
+.logo img {
+    width: 50px;
+    transition: width 0.3s ease;
+}
+
+/* Menu toggle (hamburger) toujours au-dessus */
+.menu-toggle {
+    z-index: 1001;
+    pointer-events: auto;
+}
+
+.menu-toggle i {
+    font-size: 30px;
+    color: white;
+    z-index: 10000;
+}
+
+/* Menu actif (plein écran) */
+.nav-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(13, 27, 42, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: all 0.3s ease;
+    opacity: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links.nav-active {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-links li {
+    margin: 20px 0;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 2rem;
+}
+
+/* Pour l'effet de la croix quand on clique */
+.menu-toggle.active i {
+    content: '\f00d';
+    color: white;
+}
+
+/* Cacher les liens de navigation par défaut */
+.nav-links {
+    display: none;
+}
+
+/* Ajustement du conteneur vidéo */
+.video-container {
+    position: relative;
+    width: 100vw; /* Prend toute la largeur de la fenêtre */
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ajustement de la vidéo elle-même */
+.bg-video {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    height: 100%; /* Prend toute la hauteur du conteneur */
+    object-fit: cover; /* Couvre tout l'espace sans déformation */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+
+/* Bouton pour scroller */
+.scroll-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.scroll-button i {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Style pour les sections */
+section {
+    height: 100vh;
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 768px) {
+    .scroll-button {
+        font-size: 2.5rem;
+    }
+
+    .navbar.solid .logo img {
+        width: 40px;
+    }
+}
+/* Améliorer les titres */
+h1, h2, h3 {
+    font-size: 2.5rem; /* Augmenter la taille des titres */
+    font-weight: 700;  /* Rendre les titres plus gras */
+    color: #0d1b2a;    /* Couleur sombre pour les titres */
+    margin-bottom: 20px; /* Ajouter un espacement en bas des titres */
+}
+
+/* Améliorer les paragraphes */
+p {
+    font-size: 1.2rem;  /* Taille légèrement augmentée pour les paragraphes */
+    font-weight: 400;   /* Laisser les paragraphes plus légers pour une bonne lisibilité */
+    color: #333333;     /* Couleur de texte plus sombre pour une bonne lecture */
+    line-height: 1.6;   /* Espacement entre les lignes */
+    margin-bottom: 15px; /* Ajout d'un espacement en bas des paragraphes */
+}
+
+/* Icône de fermeture (croix) */
+.close-icon {
+    display: none; /* Cachée par défaut */
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 10000; /* Augmente le z-index pour que la croix soit au-dessus du menu */
+}
+
+/* Afficher la croix uniquement lorsque le menu est actif */
+.nav-active .close-icon {
+    display: block; /* La croix apparaît lorsque le menu est ouvert */
+}
+/* Pour le bouton hamburger */
+.menu-toggle i:hover {
+    color: #52b3e4; /* Bleu clair au survol */
+}
+
+/* Pour la flèche de scroll */
+.scroll-button i:hover {
+    color: #52b3e4; /* Bleu clair au survol */
+}
+.scroll-button i {
+    color: white;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9); /* Augmentation de l'ombre pour encore plus de visibilité */
+    animation: bounce 2s infinite;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transition douce */
+}
+
+
+
+
+/* Section Nos Solutions */
+.solutions-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Grande image à gauche pour les lignes impaires */
+    grid-auto-rows: 50vh; /* Fixe la hauteur de chaque ligne à 50% de la hauteur de l'écran */
+    gap: 0; /* Supprime l'espace entre les éléments */
+    width: 100vw; /* Prend toute la largeur de la fenêtre */
+    margin: 0;
+    padding: 0;
+}
+
+.solution-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.solution-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.solution-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le contenu horizontalement */
+    justify-content: center; /* Centre le contenu verticalement */
+    height: 100%; /* Prend toute la hauteur de l'overlay */
+    width: 100%; /* Prend toute la largeur de l'overlay */
+}
+
+
+.solution-overlay h3 {
+    font-size: 1.5rem; /* Taille spécifique pour le titre dans l'overlay */
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.solution-overlay p {
+    font-size: 1rem; /* Taille spécifique pour le texte dans l'overlay */
+    color: #e0e0e0;
+    line-height: 1.4;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Lignes impaires : Grande image à gauche, petite à droite */
+.row-odd .solution-item:nth-child(1) {
+    grid-column: 1 / 2;
+}
+
+.row-odd .solution-item:nth-child(2) {
+    grid-column: 2 / 3;
+}
+
+/* Lignes paires : Petite image à gauche, grande à droite */
+.row-even {
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.row-even .solution-item:nth-child(1) {
+    grid-column: 1 / 2;
+}
+
+.row-even .solution-item:nth-child(2) {
+    grid-column: 2 / 3;
+}
+
+/* Supprimer tout espace extérieur */
+#nos-solutions {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .solutions-container {
+        display: block;
+        width: 100%;
+    }
+    .solution-item {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 0; /* Supprime l'espace entre les éléments */
+    }
+    .solution-image {
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        z-index: 1;
+    }
+    .solution-overlay {
+        font-size: 1rem;
+        padding: 15px;
+        text-align: center;
+        color: white;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+    }
+}
+
+
+body {
+    overflow-x: hidden;
+}

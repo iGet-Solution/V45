@@ -1,0 +1,84 @@
+/* Container des solutions qui occupe toute la largeur de la page */
+.solutions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Permet de s'ajuster automatiquement */
+    gap: 20px; /* Espacement entre les éléments */
+    max-width: 100%; /* Prend toute la largeur disponible */
+    padding: 0; /* Enlève le padding */
+    margin: 0 auto; /* Centrer la grille */
+}
+
+/* Adaptation pour mobile : une seule colonne sur petits écrans */
+@media (max-width: 768px) {
+    .solutions-container {
+        grid-template-columns: 1fr; /* Une colonne sur mobile */
+    }
+}
+
+/* Style pour chaque solution */
+.solution-item {
+    position: relative;
+    height: 350px; /* Ajuste la hauteur pour occuper plus d'espace */
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+/* L'image de fond couvre tout l'espace */
+.solution-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover; /* S'assure que l'image couvre bien l'espace */
+    filter: brightness(0.8); /* Ajuste la luminosité */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Texte visible sur l'image */
+.solution-item h3,
+.solution-item p {
+    position: relative;
+    color: white;
+    padding: 20px;
+    z-index: 1;
+}
+
+.solution-item h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.solution-item p {
+    font-size: 1rem;
+}
+
+/* Effet au survol */
+.solution-item:hover .solution-image {
+    filter: brightness(1); /* Augmente la luminosité au survol */
+    transform: scale(1.05); /* Légère mise à l'échelle au survol */
+}
+
+/* Ajustement pour que les items remplissent mieux l'espace */
+section.solutions {
+    padding: 50px 0; /* Espacement en haut et en bas */
+}
+
+/* Ajout d'un fond bleu */
+.solutions-container {
+    background-color: #1e3547; /* Couleur bleu ou choisis ta nuance */
+    padding: 20px;
+}
+
+.video-container {
+    margin-bottom: 0;
+}
+
+#nos-solutions {
+    margin-top: 0;
+    padding-top: 0;
+}

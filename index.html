@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGetSolution</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img-vid/logo get fond clair.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <!-- Barre de navigation -->
+    <header id="header">
+        <nav class="navbar transparent">
+            <div class="logo">
+                <a href="#"><img src="img-vid/logo get fond clair.png" alt="Logo" id="logo"></a>
+            </div>
+            <!-- Menu hamburger -->
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="close-icon">
+                <i class="fas fa-times"></i>
+            </div>
+        </nav>
+        <!-- Liens de navigation cachés derrière le menu hamburger -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Conteneur de la vidéo -->
+    <div class="video-container">
+        <video autoplay muted loop class="bg-video">
+            <source src="img-vid/Banner.mp4" type="video/mp4">
+        </video>
+        <!-- Bouton pour descendre -->
+        <a href="#nos-solutions" class="scroll-button">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+
+<!-- Section Nos Solutions -->
+<section id="nos-solutions" class="solutions">
+
+    <!-- Ligne impaire 1 : grande image à gauche -->
+    <div class="solutions-container row-odd">
+        <div class="solution-item solution1">
+            <div class="solution-overlay">
+                <h3>Création sur Mesure de votre PC</h3>
+                <p>Nous construisons des PC adaptés à vos exigences.</p>
+            </div>
+            <div class="solution-image" style="background-image: url('img-vid/PCCREA.jpg');"></div>
+        </div>
+        <div class="solution-item solution2">
+            <div class="solution-overlay">
+                <h3>Programmation Web</h3>
+                <p>HTML, CSS, et Wordpress.</p>
+            </div>
+            <div class="solution-image" style="background-image: url('img-vid/index2.png');"></div>
+        </div>
+    </div>
+
+    <!-- Ligne paire 2 : grande image à droite -->
+    <div class="solutions-container row-even">
+        <div class="solution-item solution3">
+            <div class="solution-overlay">
+                <h3>Mise en Réseau et Gestion de Serveur</h3>
+                <p>Installation et configuration de vos réseaux.</p>
+            </div>
+            <div class="solution-image" style="background-image: url('img-vid/servusss.png');"></div>
+        </div>
+        <div class="solution-item solution4">
+            <div class="solution-overlay">
+                <h3>Récupération de Données</h3>
+                <p>Nous vous aidons à récupérer vos fichiers importants.</p>
+            </div>
+            <div class="solution-image" style="background-image: url('img-vid/recup.jpg');"></div>
+        </div>
+    </div>
+
+    <!-- Ligne impaire 3 : grande image à gauche -->
+    <div class="solutions-container row-odd">
+        <div class="solution-item solution5">
+            <div class="solution-overlay">
+                <h3>Installation de Logiciels</h3>
+                <p>Nous installons et configurons les logiciels dont vous avez besoin.</p>
+            </div>
+            <div class="solution-image" style="background-image: url('img-vid/logicielall.png');"></div>
+        </div>
+        <div class="solution-item solution6">
+            <div class="solution-overlay">
+                <h3>Optimisation de votre OS</h3>
+                <p>Améliorez les performances de votre système d'exploitation avec notre service d'optimisation.</p>
+            </div>
+            <div class="solution-image" style="background-image: url('img-vid/BYPASS-INTERNET-WINDOWS-11-1.png');"></div>
+        </div>
+    </div>
+
+</section>
+
+
+   
+
+
+</body>
+
+</html>
