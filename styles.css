@@ -457,7 +457,4 @@ p {
 body {
     overflow-x: hidden;
 }
-section {
-    padding-top: 60px; /* Remplacez par la hauteur exacte de votre navbar */
-    margin-top: -60px; /* Même valeur en négatif pour compenser */
-}
+
