@@ -41,11 +41,16 @@
 
 <!-- Conteneur de la vidéo -->
 <div class="video-container">
-    <video autoplay muted loop class="bg-video">
+    <!-- Vidéo de fond -->
+    <video autoplay muted playsinline loop class="bg-video" disablePictureInPicture>
         <source src="img-vid/Banner.mp4" type="video/mp4">
     </video>
+    <!-- Image de remplacement pour les mobiles -->
+    <img src="img-vid/Banner.jpg" class="bg-image" alt="Background Image">
+    
     <!-- Superposition semi-transparente -->
     <div class="video-overlay"></div>
+    
     <!-- Bouton pour descendre -->
     <a href="#nos-solutions" id="scroll-button" data-scroll-target="#nos-solutions" class="scroll-button">
         <i class="fas fa-chevron-down"></i>
