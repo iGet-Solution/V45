@@ -162,7 +162,7 @@ body {
 /* Ajustement du conteneur vidéo */
 .video-container {
     position: relative;
-    width: 100vw; /* Prend toute la largeur de la fenêtre */
+    width: 100%; /* Prend toute la largeur de la fenêtre */
     height: 100vh; /* Prend toute la hauteur de la fenêtre */
     overflow: hidden;
     margin: 0;
@@ -270,13 +270,18 @@ body {
 }
 
 
-/* Style pour les sections */
+/* Style général pour les sections */
 section {
-    height: 100vh;
     padding: 50px;
     background-color: #f9f9f9;
     text-align: center;
 }
+
+/* Si vous voulez une section spécifique avec 100vh */
+#video-section {
+    height: 100vh;
+}
+
 
 /* Responsiveness */
 @media only screen and (max-width: 768px) {
@@ -346,7 +351,7 @@ p {
     grid-template-columns: 1.5fr 1fr; /* Grande image à gauche pour les lignes impaires */
     grid-auto-rows: 50vh; /* Fixe la hauteur de chaque ligne à 50% de la hauteur de l'écran */
     gap: 0; /* Supprime l'espace entre les éléments */
-    width: 100vw; /* Prend toute la largeur de la fenêtre */
+    width: 100%; /* Prend toute la largeur de la fenêtre */
     margin: 0;
     padding: 0;
 }
@@ -609,4 +614,25 @@ body {
         bottom: 15px; /* Ajuste la position pour plus de confort */
         right: 15px;
     }
+}
+.test-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.test-section h2 {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.test-section p {
+    font-size: 1.2rem;
+    color: #000000;
+}
+.test-section {
+    padding: 50px !important;
+    text-align: center !important;
+    background-color: #f9f9f9 !important;
 }
