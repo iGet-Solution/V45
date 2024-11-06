@@ -506,3 +506,17 @@ body {
         height: 70px; /* Ajustez cette valeur pour obtenir la hauteur idéale */
     }
 }
+/* Ajustements pour les écrans mobiles */
+@media only screen and (max-width: 768px) {
+    .video-content h1 {
+        font-size: 2.5rem; /* Réduire la taille pour les petits écrans */
+    }
+
+    .video-content p {
+        font-size: 1rem; /* Réduire la taille pour les petits écrans */
+    }
+
+    .scroll-button {
+        font-size: 2rem; /* Adapter la taille de l'icône de scroll */
+    }
+}
