@@ -104,3 +104,23 @@ scrollButton.addEventListener('click', (event) => {
         });
     }
 });
+
+// Sélectionne le bouton Back to Top
+const backToTopButton = document.getElementById('back-to-top');
+
+// Afficher/Masquer le bouton lors du défilement
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+});
+
+// Action lors du clic sur le bouton Back to Top
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
