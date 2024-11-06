@@ -192,7 +192,13 @@ body {
     z-index: 2;
     padding: 20px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Assure que le contenu s'étend sur toute la largeur */
 }
+
 
 /* Style du titre */
 .video-content h1 {
@@ -546,6 +552,48 @@ body {
 .back-to-top.show {
     opacity: 1;
     visibility: visible;
+}
+/* Style pour le bouton Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px; /* Réduction de la largeur */
+    height: 40px; /* Réduction de la hauteur */
+    background-color: #1e3547; /* Couleur de la navbar */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem; /* Ajuste la taille de l'icône */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #52b3e4; /* Couleur lors du hover */
+}
+
+/* Ajustement pour les petits écrans */
+@media only screen and (max-width: 768px) {
+    .back-to-top {
+        width: 35px; /* Taille réduite pour mobile */
+        height: 35px;
+        font-size: 1rem; /* Réduction de l'icône */
+        bottom: 15px; /* Ajuste la position pour plus de confort */
+        right: 15px;
+    }
 }
 
 .back-to-top:hover {
