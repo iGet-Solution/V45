@@ -94,15 +94,13 @@ scrollButton.addEventListener('click', (event) => {
     const targetSection = document.querySelector(scrollButton.getAttribute('data-scroll-target'));
 
     if (targetSection) {
-        // Calcul de l'offset avec la hauteur de la barre de navigation
+        // Utilise uniquement la hauteur de la navbar
         const navbarHeight = navbar.offsetHeight;
 
-        // Défilement vers la section cible, en ajustant pour éviter de cacher le haut
+        // Défilement vers la section cible sans ajustement mobile
         window.scrollTo({
             top: targetSection.offsetTop - navbarHeight,
             behavior: 'smooth'
         });
     }
 });
-
-

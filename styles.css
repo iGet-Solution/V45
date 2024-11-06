@@ -180,6 +180,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Noir à 50% d'opacité */
     z-index: 1; /* Place la superposition au-dessus de la vidéo */
 }
+
 /* Conteneur pour le titre, sous-titre et bouton de défilement */
 .video-content {
     position: absolute;
@@ -195,16 +196,28 @@ body {
 
 /* Style du titre */
 .video-content h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: bold;
     margin: 0 0 10px;
     color: #ffffff;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+    position: relative; /* Nécessaire pour le pseudo-élément */
+}
+
+/* Soulignement du titre */
+.video-content h1::after {
+    content: "";
+    display: block;
+    width: 50%; /* Ajustez la largeur de la ligne */
+    height: 3px; /* Épaisseur de la ligne */
+    background-color: #ffffff; /* Couleur de la ligne */
+    margin: 8px auto 0; /* Centrage et espacement de la ligne */
+    opacity: 0.8; /* Légère transparence */
 }
 
 /* Style du sous-titre */
 .video-content p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #e0e0e0;
     line-height: 1.4;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
@@ -221,6 +234,7 @@ body {
     left: 0;
     z-index: 0; /* La vidéo est en arrière-plan sous la superposition */
 }
+
 
 /* Bouton pour scroller */
 .scroll-button {
@@ -447,6 +461,7 @@ p {
         display: block;
         width: 100%;
     }
+
     .solution-item {
         display: block;
         width: 100%;
@@ -479,9 +494,15 @@ p {
         align-items: center;
         box-sizing: border-box;
     }
-}
+
 
 
 body {
     overflow-x: hidden;
+}
+}
+@media only screen and (max-width: 768px) {
+    .navbar {
+        height: 70px; /* Ajustez cette valeur pour obtenir la hauteur idéale */
+    }
 }
