@@ -121,15 +121,99 @@
         </div>
     </div>
 
-</section>
-<!-- Section de test -->
-<section id="test-section" class="test-section">
-    <h2>Section de Test</h2>
-    <p>Ceci est une section de test pour vérifier l'affichage.</p>
+    
+
+
+<!-- Counter Start -->
+<div id="counters" class="counter-container">
+    <div class="counter">
+        <div class="counter-icon"><i class="fa fa-calendar"></i></div>
+        <div class="number"><span data-end-value="5">0</span></div>
+        <h4 class="font-weight">D'expérience</h4>
+    </div>
+    <div class="counter">
+        <div class="counter-icon"><i class="fa fa-check"></i></div>
+        <div class="number"><span data-end-value="99">0</span></div>
+        <h4 class="font-weight">Dépannage</h4>
+    </div>
+    <div class="counter">
+        <div class="counter-icon"><i class="fa fa-users"></i></div>
+        <div class="number"><span data-end-value="380">0</span></div>
+        <h4 class="font-weight">Clients</h4>
+    </div>
+    <div class="counter">
+        <div class="counter-icon"><i class="fa fa-heart"></i></div>
+        <div class="number"><span data-end-value="99">0</span></div>
+        <h4 class="font-weight">Recommandation</h4>
+    </div>
+</div>
+
+<section id="contact" class="contact-container">
+    <!-- Partie gauche : Formulaire de contact -->
+    <div class="contact-left">
+        <form id="contact-form" method="post" action="https://formspree.io/f/xqazaayq">
+            <div class="fields">
+                <div class="field">
+                    <label for="name">Prénom</label>
+                    <input type="text" name="name" id="name" class="input-field" />
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="input-field" />
+                </div>
+                <div class="field">
+                    <label for="message">Votre Message</label>
+                    <textarea name="message" id="message" rows="6" class="textarea-field"></textarea>
+                </div>
+            </div>
+            <div class="button-container">
+                <input type="submit" value="Envoyer" class="submit-button">
+                <input type="reset" value="Supprimer" class="reset-button">
+            </div>
+        </form>
+        
+        <!-- Message de confirmation -->
+        <div id="confirmation-message" class="confirmation-message" style="display: none;">
+            Votre message a été envoyé avec succès !
+        </div>
+    </div>
+
+    <!-- Partie droite : Informations de contact -->
+    <div class="contact-right">
+        <div class="contact-method">
+            <i class="fas fa-envelope"></i>
+            <h4>Email</h4>
+            <a href="mailto:igetsolution@gmail.com">igetsolution@gmail.com</a>
+        </div>
+        <div class="contact-method">
+            <i class="fas fa-phone"></i>
+            <h4>Téléphone</h4>
+            <span>07.50.35.62.18</span>
+        </div>
+        <div class="contact-method">
+            <i class="fas fa-home"></i>
+            <h4>Adresse</h4>
+            <span>Angers<br>Durtal, La Flèche, et alentours</span>
+        </div>
+    </div>
 </section>
 
 
-   
+<footer class="footer">
+    <div class="social-icons">
+        <a href="https://fr.linkedin.com/in/iget-solution-766684274?challengeId=AQFoTydo7uftYQAAAZCSQifZAu5nVTtOOQxzS_RibKURRFEsGLW0QrWgOdaDoZ5VusLXVLX9zipnUZiUCkxkZhP83gUvWOieRQ&submissionId=6e52bfd3-b93b-e017-5dbe-9c73b21bc81a&challengeSource=AgE0JtyXxlSaPgAAAZCSQjGeGLK5FmLYkIqj5gEO1uEz1HaZOmfvAzU6M_lva6Y&challegeType=AgE-VpqHMmtUOQAAAZCSQjGilyI_hSpErWnZgDtd4ihIUeG_apnkY_E&memberId=AgGSkB-98w7hBQAAAZCSQjGlUlCJd7BGDWy-yRvVbMyzAxY&recognizeDevice=AgEpfLO3vrvqAAAAAZCSQjGpW5yVkpYhaxqdvnu5lcJbsAzvD2yn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/people/IGetSolution/100069763268469/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/igetsolution/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/c/AZN72"><i class="fab fa-youtube"></i></a>
+        <a href="https://x.com/AmaZingN0OB"><i class="fab fa-twitter"></i></a>
+        
+    </div>
+    <p class="footer-text">
+        &copy;  Tous droits réservés à iGetSolution. Ce site a été entièrement conçu et réalisé par mes soins. Toute reproduction, totale ou partielle, est interdite sans mon autorisation.
+    </p>
+</footer>
+
+
 
 <!-- Bouton Back to Top -->
 <button id="back-to-top" class="back-to-top">

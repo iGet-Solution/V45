@@ -124,3 +124,99 @@ backToTopButton.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+
+// Fonction pour animer chaque compteur avec une vitesse ajustable
+function animateCounter(element, endValue) {
+    let startValue = 0;
+    let duration = 10000; // 10 secondes pour un défilement lent
+    let increment = Math.ceil(endValue / (duration / 30)); // Ajustement de l'incrémentation
+
+    let counter = setInterval(() => {
+        startValue += increment;
+        if (startValue >= endValue) {
+            startValue = endValue;
+            clearInterval(counter);
+        }
+        element.innerText = startValue;
+    }, 30); // Intervalle plus grand pour un défilement plus lent
+}
+
+// Démarrer l'animation et réinitialiser les compteurs à chaque fois
+function startCounters() {
+    const counters = document.querySelectorAll('.counter .number span');
+    counters.forEach(counter => {
+        const endValue = parseInt(counter.getAttribute('data-end-value'));
+        counter.innerText = '0'; // Réinitialise à zéro
+        animateCounter(counter, endValue);
+    });
+}
+
+// Observateur d'intersection pour surveiller l'entrée de la section dans la vue
+const countersSection = document.getElementById('counters');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            startCounters();
+        }
+    });
+}, {
+    threshold: 0.5 // Active quand 50% de la section est visible
+});
+
+// Attache l'observateur à la section des compteurs
+observer.observe(countersSection);
+
+// Formulaire
+document.getElementById("contact-form").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Empêche la soumission par défaut du formulaire
+
+    // Récupère les valeurs des champs
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // Configuration des données à envoyer
+    const formData = {
+        name: name,
+        email: email,
+        message: message
+    };
+
+    try {
+        // Envoie la requête en utilisant fetch
+        const response = await fetch("https://formspree.io/f/xqazaayq", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            // Affiche un message de confirmation
+            const confirmationMessage = document.createElement("div");
+            confirmationMessage.innerText = "Votre message a été envoyé avec succès !";
+            confirmationMessage.style.color = "white"; // Couleur du texte
+            confirmationMessage.style.backgroundColor = "#52b3e4"; // Couleur de fond
+            confirmationMessage.style.padding = "10px";
+            confirmationMessage.style.borderRadius = "5px";
+            confirmationMessage.style.marginTop = "10px";
+            document.querySelector(".button-container").appendChild(confirmationMessage);
+
+            // Réinitialise le formulaire
+            document.getElementById("contact-form").reset();
+
+            // Cache le message après 5 secondes
+            setTimeout(() => {
+                confirmationMessage.remove();
+            }, 5000);
+        } else {
+            alert("Une erreur est survenue lors de l'envoi du message. Veuillez réessayer.");
+        }
+    } catch (error) {
+        console.error("Erreur :", error);
+        alert("Une erreur est survenue. Veuillez vérifier votre connexion et réessayer.");
+    }
+});
+
