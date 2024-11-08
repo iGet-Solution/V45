@@ -346,6 +346,7 @@ p {
 
 
 /* Section Nos Solutions */ 
+/* Section Nos Solutions */ 
 .solutions-container {
     display: grid;
     grid-template-columns: 1.5fr 1fr; /* Grande image à gauche pour les lignes impaires */
@@ -503,6 +504,7 @@ p {
         box-sizing: border-box;
     }
 }
+
 
 
 body {
