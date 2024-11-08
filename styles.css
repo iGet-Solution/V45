@@ -345,7 +345,7 @@ p {
 
 
 
-/* Section Nos Solutions */
+/* Section Nos Solutions */ 
 .solutions-container {
     display: grid;
     grid-template-columns: 1.5fr 1fr; /* Grande image à gauche pour les lignes impaires */
@@ -372,6 +372,13 @@ p {
     top: 0;
     left: 0;
     z-index: 1;
+    filter: brightness(0.8); /* Appliquer le filtre par défaut */
+    transition: transform 0.5s ease, filter 0.5s ease; /* Animation de zoom et filtre */
+}
+
+.solution-item:hover .solution-image {
+    transform: scale(1.05); /* Zoom léger à 5% */
+    filter: brightness(1); /* Retire complètement le filtre sur le survol */
 }
 
 .solution-overlay {
@@ -384,7 +391,7 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent plus foncé pour contraste */
+    background: rgba(0, 0, 0, 0.5); /* Noir à 50% d'opacité */
     color: white;
     text-align: center;
     padding: 15px;
@@ -411,8 +418,6 @@ p {
     opacity: 0.8; /* Légère transparence */
 }
 
-
-
 .solution-overlay p {
     font-size: 1.3rem;  /* Taille ajustée du sous-titre */
     color: #e0e0e0;
@@ -420,8 +425,6 @@ p {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
     margin: 0;
 }
-
-
 
 /* Responsive styling */
 @media only screen and (max-width: 768px) {
@@ -432,10 +435,6 @@ p {
         font-size: 0.9rem; /* Ajuster pour les petits écrans */
     }
 }
-
-
-
-
 
 /* Lignes impaires : Grande image à gauche, petite à droite */
 .row-odd .solution-item:nth-child(1) {
@@ -464,8 +463,6 @@ p {
     padding: 0;
     margin: 0;
 }
-
-
 
 @media only screen and (max-width: 768px) {
     .solutions-container {
@@ -505,13 +502,13 @@ p {
         align-items: center;
         box-sizing: border-box;
     }
-
+}
 
 
 body {
     overflow-x: hidden;
 }
-}
+
 @media only screen and (max-width: 768px) {
     .navbar {
         height: 70px; /* Ajustez cette valeur pour obtenir la hauteur idéale */
