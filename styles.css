@@ -13,6 +13,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
+    height: 70px;
     z-index: 1000; /* Garder un z-index élevé pour capturer les clics */
     transition: background-color 0.3s ease;
     box-sizing: border-box;
@@ -294,12 +295,20 @@ section {
     }
 }
 /* Améliorer les titres */
+/* Améliorer les titres */
 h1, h2, h3 {
     font-size: 2.5rem; /* Augmenter la taille des titres */
     font-weight: 700;  /* Rendre les titres plus gras */
     color: #0d1b2a;    /* Couleur sombre pour les titres */
     margin-bottom: 20px; /* Ajouter un espacement en bas des titres */
 }
+
+
+
+
+
+
+
 
 /* Améliorer les paragraphes */
 p {
@@ -874,4 +883,145 @@ body {
 
 .footer .footer-text a:hover {
     color: #ffffff; /* Change la couleur au survol */
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Style du lien actif pour la section "Contact" */
+#menu a[href="#contact"].active {
+    color: #1e90ff; /* Bleu pour la section "Contact" */
+}
+
+
+
+
+
+
+.contact-method i {
+    color: white; /* Couleur initiale */
+    font-size: 1.5rem; /* Ajuste la taille de l'icône */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-method i:hover {
+    color: #52b3e4; /* Couleur bleue au survol */
+    transform: scale(1.2); /* Agrandit légèrement l'icône */
+}
+.contact-method h4 {
+    color: white; /* Couleur initiale */
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.contact-method h4:hover {
+    color: #52b3e4; /* Couleur bleue au survol */
+}
+.contact-method a {
+    color: #d1d1d1; /* Couleur initiale */
+    text-decoration: none; /* Supprime le soulignement */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 1px solid transparent; /* Ligne invisible au début */
+}
+
+.contact-method a:hover {
+    color: #52b3e4; /* Couleur bleue au survol */
+    border-bottom: 1px solid #52b3e4; /* Ligne bleue visible au survol */
+}
+
+.contact-method span {
+    color: #d1d1d1; /* Couleur initiale */
+    font-size: 0.9rem; /* Taille du texte */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-method span:hover {
+    color: #52b3e4; /* Couleur bleue au survol */
+    transform: scale(1.05); /* Légère augmentation de la taille */
+}
+
+
+
+
+
+/* Effet de survol pour les titres (h3) */
+#nos-solutions .solution-overlay h3 {
+    color: #fff; /* Couleur de base */
+    transition: color 0.3s ease, transform 0.3s ease; /* Animation fluide */
+}
+
+#nos-solutions .solution-overlay h3:hover {
+    color: #52b3e4; /* Bleu au survol */
+    transform: scale(1.05); /* Agrandissement léger */
+}
+
+
+
+
+/* Effet de survol pour le titre principal (h1) */
+.video-content h1 {
+    color: #fff; /* Couleur de base */
+    font-size: 3.2rem; /* Taille du titre */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre légère */
+    transition: color 0.3s ease, transform 0.3s ease; /* Animation fluide */
+}
+
+.video-content h1:hover {
+    color: #52b3e4; /* Bleu au survol */
+    transform: scale(1.05); /* Agrandissement léger */
+}
+
+/* Effet de survol pour le sous-titre (p ou span) */
+.video-content p,
+.video-content span {
+    color: #d1d1d1; /* Couleur de base */
+    font-size: 1.5rem; /* Taille du sous-titre */
+    transition: color 0.3s ease, transform 0.3s ease; /* Animation fluide */
+}
+
+.video-content p:hover,
+.video-content span:hover {
+    color: #52b3e4; /* Bleu au survol */
+    transform: scale(1.02); /* Agrandissement léger */
+}
+
+
+
+/* Ajouter le filtre initial sur les images de la section "Nos Solutions" */
+#nos-solutions .solutions-container .solution-item .solution-image {
+    filter: brightness(0.7); /* Filtre initial */
+    transition: filter 0.3s ease, transform 0.3s ease; /* Ajout de la transition */
+    position: relative;
+    z-index: 1;
+}
+
+/* Supprimer le filtre au survol */
+#nos-solutions .solutions-container .solution-item:hover .solution-image {
+    filter: brightness(1); /* Filtre normal */
+    transform: scale(1.05); /* Ajout d'un effet de zoom */
+    z-index: 2;
+}
+
+/* Assurez-vous que l'overlay reste visible et bien positionné */
+#nos-solutions .solutions-container .solution-item .solution-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+/* Ajustement pour le survol afin de garder l'overlay visible */
+#nos-solutions .solutions-container .solution-item:hover .solution-overlay {
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 4;
 }
